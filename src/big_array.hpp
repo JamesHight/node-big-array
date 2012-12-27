@@ -315,11 +315,9 @@ public:
 	}
 
 	DataType pop() {
-		if (this->index_ == 0) {
-			//ThrowException(Exception::TypeError(String::New("Array is empty")));
+		if (this->index_ > 0) {
+			this->index_--;
 		}
-
-		this->index_--;
 
 		DataType value = this->get(this->index_);
 
