@@ -63,6 +63,10 @@ Common methods
 	set(index, value)
 	get(index)
 
+	// inc/dec by 1
+	inc(index)
+	dec(index)
+
 	push(value)
 	pop()
 	// modify push/pop index
@@ -71,5 +75,4 @@ Common methods
 
 	// resize array to [size]
 	resize(size)
-
 ````
