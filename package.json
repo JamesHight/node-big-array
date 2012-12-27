@@ -1,7 +1,7 @@
 {
   "name": "big-array",
   "version": "0.0.1",
-  "description": "When you need an array with a few billion elements",
+  "description": "When you need an array with a few trillion elements",
   "main": "./build/Release/big_array",
   "dependencies": {},
   "devDependencies": {},
@@ -9,7 +9,10 @@
     "test": "node test/tests.js",
     "install": "node-gyp rebuild"
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JamesHight/node-big-array"
+  },
   "author": "James Hight",
   "license": "Apache 2",
   "gypfile": true,

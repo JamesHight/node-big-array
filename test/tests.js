@@ -36,3 +36,5 @@ assert(ba.get(59) == 49, "Check dec");
 ba.resize(11);
 assert(ba.getSize() == 20, "Check size after resize");
 assert(ba.get(59) == 0, "Check 60th element after resize");
+
+console.log('Tests: OK');
