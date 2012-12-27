@@ -1,0 +1,1 @@
+cmd_Release/obj.target/big_array.node := flock ./Release/linker.lock g++ -shared -pthread -rdynamic -m64  -Wl,-soname=big_array.node -o Release/obj.target/big_array.node -Wl,--start-group Release/obj.target/big_array/src/big_array.o -Wl,--end-group 
