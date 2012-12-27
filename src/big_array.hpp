@@ -85,7 +85,18 @@ public:
 	    HandleScope scope;
 	    BigArray<DataType> *ba;
 
-	    ba = new BigArray<DataType>(10, 10);
+	    long unsigned int size = 1;
+	    long unsigned int blockSize = 1048576;
+
+	    if (!args.Length() > 0) {
+	    	size = args[0]->NumberValue();
+	    }
+
+	    if (!args.Length() > 1) {
+	    	blockSize = args[1]->NumberValue();
+	    }
+
+	    ba = new BigArray<DataType>(size, blockSize);
 	    ba->Wrap(args.This());
 
 	    return args.This();
@@ -295,7 +306,7 @@ public:
 	// Regular class members
 	// *********************
 
-	BigArray(long unsigned int size = 1, long unsigned int blockSize = 1048576) {	
+	BigArray(long unsigned int size, long unsigned int blockSize) {	
 		this->index_ = 0;
 		this->blockSize_ = blockSize;
 		this->resize(size);
