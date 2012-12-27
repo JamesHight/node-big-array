@@ -2,7 +2,7 @@
   "name": "big-array",
   "version": "0.0.1",
   "description": "When you need an array with a few billion elements",
-  "main": "n./build/Release/big_array",
+  "main": "./build/Release/big_array",
   "dependencies": {},
   "devDependencies": {},
   "scripts": {
