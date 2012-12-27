@@ -45,7 +45,8 @@ Usage: bigArray.Char(numberOfInitialElements, sizeOfElementBlocks)
 		ba, i;
 
 	ba = bigArray.UnsignedChar();
-	// Unlike JavaScript, setting or getting a high index will result in the array allocating all elements before that index
+	// Unlike JavaScript, setting or getting a high index will result in 
+	// the array allocating all elements before that index
 	ba.set(trillion, 5);
 
 ````

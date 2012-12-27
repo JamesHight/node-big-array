@@ -71,6 +71,12 @@ public:
 		tpl->PrototypeTemplate()->Set(String::NewSymbol("resize"),
 		FunctionTemplate::New(resize)->GetFunction());
 
+		tpl->PrototypeTemplate()->Set(String::NewSymbol("getSize"),
+		FunctionTemplate::New(get_size)->GetFunction());
+
+		tpl->PrototypeTemplate()->Set(String::NewSymbol("getBlockSize"),
+		FunctionTemplate::New(get_block_size)->GetFunction());
+
 		Persistent<Function> constructor = Persistent<Function>::New(tpl->GetFunction());
 		target->Set(String::NewSymbol(name), constructor);
 	}
@@ -258,6 +264,32 @@ public:
 		return scope.Close(Undefined());
 	}
 
+	static Handle<Value> get_size(const Arguments& args) {
+		HandleScope scope;
+
+		BigArray<DataType>* that = ObjectWrap::Unwrap< BigArray<DataType> >(args.This());
+		
+		try {
+			return scope.Close(Number::New(that->get_size()));
+		}
+		catch (bad_alloc& exc) {
+			return ThrowException(Exception::TypeError(String::New("Cannot allocate more memory")));
+		}
+	}
+
+	static Handle<Value> get_block_size(const Arguments& args) {
+		HandleScope scope;
+
+		BigArray<DataType>* that = ObjectWrap::Unwrap< BigArray<DataType> >(args.This());
+		
+		try {
+			return scope.Close(Number::New(that->get_block_size()));
+		}
+		catch (bad_alloc& exc) {
+			return ThrowException(Exception::TypeError(String::New("Cannot allocate more memory")));
+		}
+	}
+
 
 	// *********************
 	// Regular class members
@@ -345,11 +377,11 @@ public:
 		}
 	}
 
-	unsigned int size() {
+	unsigned int get_size() {
 		return data.size() * this->blockSize_;
 	}
 
-	unsigned int blockSize() {
+	unsigned int get_block_size() {
 		return this->blockSize_;
 	}
 
