@@ -88,11 +88,11 @@ public:
 	    long unsigned int size = 1;
 	    long unsigned int blockSize = 1048576;
 
-	    if (!args.Length() > 0) {
+	    if (args.Length() > 0) {
 	    	size = args[0]->NumberValue();
 	    }
 
-	    if (!args.Length() > 1) {
+	    if (args.Length() > 1) {
 	    	blockSize = args[1]->NumberValue();
 	    }
 
