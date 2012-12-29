@@ -5,10 +5,6 @@
       'sources': [
         'src/big_array.cpp'
       ],
-       'include_dirs': [
-         'include'
-       ],
-
       'cflags!': [ '-fno-exceptions' ],
       'cflags_cc!': [ '-fno-exceptions' ],
       'conditions': [

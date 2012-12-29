@@ -16,5 +16,6 @@
   "author": "James Hight",
   "license": "Apache 2",
   "gypfile": true,
-  "readmeFilename": "README.md"
+  "readmeFilename": "README.md",
+  "engines": { "node": "*" }
 }

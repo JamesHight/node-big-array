@@ -18,16 +18,10 @@ private:
 	long unsigned int index_;
 	vector< vector<DataType> > data;
 
-	bool grow_(long unsigned int size) {
+	void grow_(long unsigned int size) {
 		if (size > data.size()) {
-			try {
-				data.resize(size, vector<DataType>(this->blockSize_));
-			}
-			catch(bad_alloc& exc) {
-				return false;
-			}
+			data.resize(size, vector<DataType>(this->blockSize_));
 		}
-		return true;
 	}
 
 
@@ -380,12 +374,8 @@ public:
 
 	void resize(long unsigned int size) {
 		long unsigned int count = (size / this->blockSize_) + 1;
-		try {
-			data.resize(count, vector<DataType>(this->blockSize_));
-		}
-		catch(bad_alloc& exc) {
-			//ThrowException(Exception::TypeError(String::New("Cannot allocate more memory")));
-		}
+		
+		data.resize(count, vector<DataType>(this->blockSize_));		
 	}
 
 	unsigned int get_size() {
