@@ -1,6 +1,6 @@
 {
   "name": "big-array",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "When you need an array with a few trillion elements",
   "main": "./build/Release/big_array",
   "dependencies": {},
