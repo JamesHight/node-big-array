@@ -1,6 +1,6 @@
 {
   "name": "big-array",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "When you need an array with a few trillion elements",
   "main": "./build/Release/big_array",
   "dependencies": {},
@@ -14,7 +14,12 @@
     "url": "https://github.com/JamesHight/node-big-array"
   },
   "author": "James Hight",
-  "license": "Apache 2",
+  "licenses": [
+    {
+      "type": "Apache 2.0",
+      "url": "https://github.com/JamesHight/node-big-array/blob/master/LICENSE"
+    }
+  ],
   "gypfile": true,
   "readmeFilename": "README.md",
   "engines": { "node": "*" }
